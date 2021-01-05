@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loterias</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="lotery">
+        <div class="lotery__tabs">
+            <span>LOTOFACIL</span>
+            <span class="background--disabled">MEGASENA</span>
+            <span class="background--disabled">QUINA</span>
+        </div>
+
+        <div class="lotery__game">
+            <div class="lotery__container">
+                <h2 class="lotery__title"></h2>
+                <div class="lotery__numbers"></div>
+            </div>
+
+            <div class="lotery__container--no-border">
+                <div class="lotery__controller">
+                    <label for="dezenas">Dezenas</label>
+                    <input type="number" id="dezenas">
+                </div>
+
+                <div class="lotery__controller">
+                    <label for="impar">Impares</label>
+                    <input type="number" id="impar">
+                </div>
+
+                <div class="lotery__controller">
+                    <label for="primos">Primos</label>
+                    <input type="number" id="primos">
+                </div>
+
+                <div class="lotery__controller">
+                    <label>Colunas</label>
+
+                    <div class="lotery__labels">
+                        <label for="min">Min</label>
+                        <label for="max">Max</label>
+                    </div>
+
+                    <div class="lotery__fields">
+                        <input type="number" id="min" min="0" max="3" value="0">
+                        <input type="number" id="max" min="3" max="5" value="3">
+                    </div>
+                </div>
+
+                <button id="generate">Gerar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

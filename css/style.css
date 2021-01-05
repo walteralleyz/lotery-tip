@@ -1,0 +1,121 @@
+.lotery {
+    width: 85vw;
+    margin: 0 auto;
+    padding-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border: 1px solid #4b11a8;
+}
+
+.lotery__tabs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.lotery__tabs span {
+    padding: 16px;
+    flex-grow: 1;
+    text-align: center;
+    color: #fff;
+    background-color: #188038;
+    font-weight: bold;
+}
+
+.lotery__tabs span:hover {
+    cursor: pointer;
+}
+
+.lotery__tabs span:first-child {
+    background-color: #4b11a8;
+}
+
+.lotery__tabs span:last-child {
+    background-color: #9b61f8;
+}
+
+.lotery__game {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 64px;
+}
+
+.lotery__container,
+.lotery__container--no-border {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border: 3px double #333;
+    border-radius: 25px;
+    width: min-content;
+}
+
+.lotery__container--no-border {
+    border: none;
+    gap: 16px;
+    max-width: 200px;
+}
+
+.lotery__numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.lotery__row {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: min-content;
+}
+
+.lotery__number {
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+.lotery__labels, .lotery__fields {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.lotery__fields input {
+    width: 70px;
+}
+
+.text--center {
+    text-align: center;
+}
+
+.background--disabled {
+    background-color: #999 !important;
+    color: #333 !important;
+}
+
+.lotofacil__title {
+    color: #4b11a8;
+}
+
+.megasena__title {
+    color: #188038;
+}
+
+.quina__title {
+    color: #9b61f8;
+}
+
+.lotofacil__selected, .megasena__selected, .quina__selected {
+    background-color: #b5178d;
+    color: #fff;
+}
+
+.megasena__selected {
+    background-color: #188038;
+}
+
+.quina__selected {
+    background-color: #9b61f8;
+}
