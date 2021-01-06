@@ -16,6 +16,10 @@
             <span class="background--disabled">QUINA</span>
         </div>
 
+        <div class="lotery__warn">
+            <h6>Último Resultado: <span></span></h6>
+        </div>
+
         <div class="lotery__game">
             <div class="lotery__container">
                 <h2 class="lotery__title"></h2>
@@ -23,6 +27,7 @@
             </div>
 
             <div class="lotery__container--no-border">
+                <h4 class="text--center">Gerador de Jogo</h4>
                 <div class="lotery__controller">
                     <label for="dezenas">Dezenas</label>
                     <input type="number" id="dezenas">
@@ -39,25 +44,52 @@
                 </div>
 
                 <div class="lotery__controller">
-                    <label>Colunas</label>
-
-                    <div class="lotery__labels">
-                        <label for="min">Min</label>
-                        <label for="max">Max</label>
-                    </div>
+                    <label for="min">Colunas</label>
 
                     <div class="lotery__fields">
-                        <input type="number" id="min" min="0" max="3" value="0">
-                        <input type="number" id="max" min="3" max="5" value="3">
+                        <input type="number" id="min" min="0" max="3" placeholder="min">
+                        <input type="number" id="max" min="3" max="5" placeholder="max">
                     </div>
                 </div>
 
-                <button id="generate">Gerar</button>
+                <button class="lotery__button" id="generate">Gerar</button>
             </div>
         </div>
     </div>
 
-    <script src="./js/main.js"></script>
+    <script src="./js/lotery.js"></script>
+    <script src="./js/lotery_rules.js"></script>
+    <script src="./js/lotery_moves.js"></script>
+
+    <script>
+        const isPrime = num => {
+            for (let i = 2, s = Math.sqrt(num); i <= s; i++)
+                if (num % i === 0) return false;
+            return num > 1;
+        }
+
+        window.onload = () => {
+            const rules = new LoteryRules();
+            const moves = new LoteryMoves(rules);
+            const button = document.getElementById('generate');
+
+            rules.setMaxDezenas();
+            rules.setMaxImpares();
+            rules.setMaxPrimos();
+
+            moves.clearFields();
+            moves.holdChangeLotery();
+            moves.denyStrings();
+
+            button.onclick = () => {
+                try {
+                    rules.generateGame();
+                } catch (e) {
+                    window.alert('Combinação não encontrada. Tente alterar alguns valores!');
+                }
+            }
+        };
+    </script>
 </body>
 
 </html>

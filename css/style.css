@@ -1,11 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
 .lotery {
-    width: 85vw;
     margin: 0 auto;
-    padding-bottom: 32px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    border: 1px solid #4b11a8;
 }
 
 .lotery__tabs {
@@ -37,24 +37,38 @@
 .lotery__game {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     gap: 64px;
+    padding: 0 64px;
+}
+
+.lotery__warn {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+.lotery__warn h6 {
+    margin: 5px;
+    color: #333;
+}
+
+.lotery__warn span {
+    color: #262121;
+    font-weight: bold;
 }
 
 .lotery__container,
 .lotery__container--no-border {
     display: flex;
     flex-direction: column;
-    padding: 16px;
-    border: 3px double #333;
-    border-radius: 25px;
-    width: min-content;
+    position: relative;
+    flex-grow: 1;
+    max-width: 100%;
 }
 
 .lotery__container--no-border {
     border: none;
-    gap: 16px;
-    max-width: 200px;
+    gap: 5px;
+    flex-basis: 250px;
 }
 
 .lotery__numbers {
@@ -63,11 +77,21 @@
     gap: 5px;
 }
 
+.lotery__controller {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.lotery__controller > label, .lotery__controller > input {
+    flex-grow: 1;
+}
+
 .lotery__row {
     display: flex;
     flex-direction: row;
-    gap: 5px;
-    width: min-content;
+    width: 100%;
+    justify-content: space-around;
 }
 
 .lotery__number {
@@ -76,14 +100,15 @@
     border-radius: 20px;
 }
 
-.lotery__labels, .lotery__fields {
+.lotery__fields {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 16px;
 }
 
 .lotery__fields input {
-    width: 70px;
+    width: calc(50% - 8px);
 }
 
 .text--center {
@@ -118,4 +143,24 @@
 
 .quina__selected {
     background-color: #9b61f8;
+}
+
+@media only screen and (max-width: 600px) {
+    .lotery {
+        border: none;
+        width: 100%;
+    }
+
+    .lotery__tabs {
+        flex-direction: column;
+    }
+
+    .lotery__game {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lotery__row {
+        gap: 5px;
+    }
 }
